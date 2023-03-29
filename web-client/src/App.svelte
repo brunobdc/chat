@@ -17,7 +17,7 @@
 </script>
 
 <main>
-  <div>
+  <div class="message-box">
     {#each messages as msg}
         <p>{msg.sender}: {msg.content}</p>
     {/each}
@@ -27,3 +27,20 @@
       <button on:click={handleClick}>SEND</button>
   </div>
 </main>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    height: 85vh;
+  }
+
+  .message-box {
+    width: 50vw;
+    height: 100%;
+    margin-top: 5vh;
+  }
+</style>

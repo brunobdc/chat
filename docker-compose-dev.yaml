@@ -1,0 +1,23 @@
+version: '3'
+services:
+  wsserver:
+    build:
+      context: ./server
+  web:
+    build:
+      context: ./web-client
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./web-client:/app
+  nginx:
+    depends_on:
+      - wsserver
+      - web
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3050:80
+      - 3000:3000
