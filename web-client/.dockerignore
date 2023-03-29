@@ -1,0 +1,10 @@
+package-lock.json
+node-modules
+README.md
+.prettierrc
+.prettierignore
+.gitignore
+.eslintignore
+.eslintrc.cjs
+.svelte-kit
+build

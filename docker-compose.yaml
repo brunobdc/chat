@@ -1,0 +1,17 @@
+version: '3'
+services:
+  wsserver:
+    build:
+      context: ./server
+  web:
+    build:
+      context: ./web-client
+  nginx:
+    depends_on:
+      - wsserver
+      - web
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - 3050:80

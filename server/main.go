@@ -116,6 +116,6 @@ func wsPage(res http.ResponseWriter, req *http.Request) {
 func main() {
 	fmt.Println("Starting application...")
 	go manager.start()
-	http.HandleFunc("/ws", wsPage)
+	http.HandleFunc("/", wsPage)
 	http.ListenAndServe(":12345", nil)
 }

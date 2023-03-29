@@ -6,7 +6,7 @@
 
 	if (browser) {
 
-		ws = new WebSocket("ws://localhost:12345/ws")
+		ws = new WebSocket(`ws://${location.host}/ws`)
 
 		ws.addEventListener("message", ev => {
 			const data = JSON.parse(ev.data)
