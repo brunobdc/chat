@@ -13,18 +13,8 @@
   })
 </script>
 
-<main>
+<main class="flex flex-col justify-around items-center h-[90vh] m-8">
   <MessageBox messages={messages} />
   <MessageForm on:submit={(event) => { ws.send(event.detail.message) }} />
 </main>
 
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 90vh;
-    margin: 2rem;
-  }
-</style>
